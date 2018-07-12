@@ -1,12 +1,12 @@
-package demoClasses;
+package p01_jarOfT2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyCollection<T> {
+public class Jar<T> {
     private List<T> collection;
 
-    public MyCollection() {
+    public Jar() {
         this.collection = new ArrayList<>();
     }
 
@@ -15,10 +15,10 @@ public class MyCollection<T> {
     }
 
     public T remove() {
-        return this.collection.remove(this.collection.size() - 1);
-    }
+        if (this.collection.isEmpty()) {
+            return null;
+        }
 
-    public T get(int index) {
-        return this.collection.get(index);
+        return this.collection.remove(this.collection.size() - 1);
     }
 }
