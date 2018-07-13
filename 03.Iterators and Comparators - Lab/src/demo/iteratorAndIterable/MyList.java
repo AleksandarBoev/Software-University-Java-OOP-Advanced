@@ -1,16 +1,18 @@
-package p02_library;
+package demo.iteratorAndIterable;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class Library<T> implements Iterable<T> {
+public class MyList <T> implements Iterable<T> {
     private List<T> collection;
 
-    public Library(T... varargs) {
-        this.collection = new ArrayList<>(Arrays.asList(varargs));
+    public MyList() {
+        this.collection = new ArrayList<>();
+    }
+
+    public void add(T element) {
+        this.collection.add(element);
     }
 
     @Override
@@ -19,17 +21,16 @@ public class Library<T> implements Iterable<T> {
     }
 
     private final class LibIterator implements Iterator<T> {
-        private int counter = 0;
-
+        private int counter = -1;
 
         @Override
         public boolean hasNext() {
-            return counter != collection.size();
+            return counter != collection.size() - 1;
         }
 
         @Override
         public T next() {
-            return collection.get(counter++);
+            return collection.get(++counter);
         }
     }
 }
