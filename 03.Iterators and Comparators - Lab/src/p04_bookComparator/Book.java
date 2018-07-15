@@ -1,4 +1,4 @@
-package p01_book;
+package p04_bookComparator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +18,7 @@ public class Book {
     public String getTitle() {
         return this.title;
     }
-
+    
     private void setTitle(String title) {
         this.title = title;
     }
