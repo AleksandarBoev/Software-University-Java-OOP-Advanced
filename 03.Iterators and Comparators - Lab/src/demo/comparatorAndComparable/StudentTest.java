@@ -19,7 +19,7 @@ public class StudentTest {
 
         List<Student> studentList1 = new ArrayList<>(studentList);
 
-        studentList = studentList.stream() //first way of sorting, using built in .compareTo method
+        studentList = studentList.stream() //first way of sorting, using MY built in .compareTo method
                 .sorted((s1, s2) -> {
                     return s1.compareTo(s2);
                 }).collect(Collectors.toList());
@@ -33,12 +33,21 @@ public class StudentTest {
 //        studentList1.sort(new StudentComparator()); //third way
 
         Set<Student> studentSet = new TreeSet<>(new StudentComparator()); // fourth way of sorting. The set always stays sorted by my criteria.
+        //IMPORTANT: even without adding "new StudentComparator()" the set would be sorted correctly, because then it would use my .compareTo method.
+        //But having multiple Comparators means I can sort the set in multiple ways
         studentSet.add(new Student(3.5, "Pesho"));
         studentSet.add(new Student(4.5, "Gosho"));
         studentSet.add(new Student(6.0, "Sasho"));
         studentSet.add(new Student(2.5, "Ana"));
         studentSet.add(new Student(2.5, "Simona"));
 
+        Set<Student> studentSet2 = new TreeSet<>(new Student.NameComparator()); // fifth way of sorting by name or by whatever I put in there.
+        studentSet2.add(new Student(3.5, "Pesho"));
+        studentSet2.add(new Student(4.5, "Gosho"));
+        studentSet2.add(new Student(6.0, "Sasho"));
+        studentSet2.add(new Student(2.5, "Ana"));
+        studentSet2.add(new Student(2.5, "Simona"));
+        //TODO what's better? Write the comparators in the class or outside the class?
         //main ends here
     }
 }
