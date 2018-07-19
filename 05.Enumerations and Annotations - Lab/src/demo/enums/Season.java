@@ -1,4 +1,4 @@
-package demo.absoluteBasics;
+package demo.enums;
 
 public enum Season {
     SPRING, SUMMER, FALL, WINTER;

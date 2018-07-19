@@ -12,7 +12,7 @@ public class Main {
 
         ListyIterator<String> listyIterator = null;
 
-        String input; //TODO make this into a code snippet
+        String input;
         while (!"END".equals(input = reader.readLine())) {
             String[] tokens = input.split(" ");
             String command = tokens[0];

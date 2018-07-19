@@ -1,15 +1,16 @@
-package demo.absoluteBasics;
+package demo.enums;
 
-public class Main {
+public class SeasonTest {
     public static void main(String[] args) {
         Season[] seasons = Season.values();
-        //.name() and .toString() do the same for now, but toString() can be overridden, but .name can't
+        //.name() and .toString() do the same for now, but toString() can be overridden and .name can't
 
         for (Season season : seasons) {
             makeSound(season);
         }
 
-        Season spring = Season.valueOf(Season.class, "SPRING");
+        Season spring = Season.valueOf(Season.class, "SPRING"); // don't know what's the difference between this and the other one
+        spring = Season.valueOf("SPRING");
         System.out.println(spring);
     }
 
