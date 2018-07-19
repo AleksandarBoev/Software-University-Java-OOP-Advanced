@@ -15,13 +15,34 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/p06_customEnumAnnotations/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="357">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomAnnotation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/p07_deckOfCards/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardRanks.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/p06_customEnumAnnotations/CardRanks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomAnnotation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/p06_customEnumAnnotations/CustomAnnotation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -39,8 +60,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,14 +74,17 @@
         <option value="$PROJECT_DIR$/src/p02_cardRank/Main.java" />
         <option value="$PROJECT_DIR$/src/p03_cardsWithPower/CardRanks.java" />
         <option value="$PROJECT_DIR$/src/p03_cardsWithPower/CardSuits.java" />
-        <option value="$PROJECT_DIR$/src/p03_cardsWithPower/Main.java" />
         <option value="$PROJECT_DIR$/src/p03_cardsWithPower/Card.java" />
-        <option value="$PROJECT_DIR$/src/p04_cardToString/Main.java" />
         <option value="$PROJECT_DIR$/src/p05_cardCompareTo/CardSuits.java" />
         <option value="$PROJECT_DIR$/src/p05_cardCompareTo/Card.java" />
+        <option value="$PROJECT_DIR$/src/p06_customEnumAnnotations/CardRanks.java" />
+        <option value="$PROJECT_DIR$/src/p06_customEnumAnnotations/CardSuits.java" />
         <option value="$PROJECT_DIR$/src/p05_cardCompareTo/Main.java" />
-        <option value="$PROJECT_DIR$/src/p06_customEnumAnnotations/Main.java" />
+        <option value="$PROJECT_DIR$/src/p04_cardToString/Main.java" />
+        <option value="$PROJECT_DIR$/src/p03_cardsWithPower/Main.java" />
         <option value="$PROJECT_DIR$/src/p06_customEnumAnnotations/CustomAnnotation.java" />
+        <option value="$PROJECT_DIR$/src/p06_customEnumAnnotations/Main.java" />
+        <option value="$PROJECT_DIR$/src/p07_deckOfCards/Main.java" />
       </list>
     </option>
   </component>
@@ -98,12 +122,6 @@
               <item name="06.Enumerations and Annotations - Exercise" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="06.Enumerations and Annotations - Exercise" type="b2602c69:ProjectViewProjectNode" />
-              <item name="06.Enumerations and Annotations - Exercise" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="p06_customEnumAnnotations" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -123,6 +141,7 @@
       <recent name="p02_cardRank" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHubRepositories\Software-University-Java-OOP-Advanced\06.Enumerations and Annotations - Exercise\src\p06_customEnumAnnotations" />
       <recent name="D:\GitHubRepositories\Software-University-Java-OOP-Advanced\06.Enumerations and Annotations - Exercise\src\p05_cardCompareTo" />
       <recent name="D:\GitHubRepositories\Software-University-Java-OOP-Advanced\06.Enumerations and Annotations - Exercise\src\p04_cardToString" />
     </key>
@@ -139,7 +158,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (3)">
+  <component name="RunManager" selected="Application.Main (4)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="p02_cardRank.Main" />
       <module name="06.Enumerations and Annotations - Exercise" />
@@ -169,6 +188,17 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="p05_cardCompareTo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="p06_customEnumAnnotations.Main" />
+      <module name="06.Enumerations and Annotations - Exercise" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="p06_customEnumAnnotations.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -230,9 +260,11 @@
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main (2)" />
       <item itemvalue="Application.Main (3)" />
+      <item itemvalue="Application.Main (4)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
@@ -250,12 +282,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1532000410396</updated>
-      <workItem from="1532000411859" duration="1576000" />
+      <workItem from="1532000411859" duration="4282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1576000" />
+    <option name="totallyTimeSpent" value="4282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -270,7 +302,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32960895" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
@@ -298,13 +330,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/p01_cardSuit/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/p01_cardSuit/CardSuits.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -323,13 +348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/p02_cardRank/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/p03_cardsWithPower/Card.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -337,16 +355,6 @@
           <folding>
             <element signature="e#329#330#0" expanded="true" />
             <element signature="e#382#383#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/p03_cardsWithPower/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -396,16 +404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/p04_cardToString/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/p05_cardCompareTo/CardRanks.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -416,23 +414,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/p05_cardCompareTo/CardSuits.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/p05_cardCompareTo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state relative-caret-position="255">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/p05_cardCompareTo/CardSuits.java">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/p04_cardToString/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/p06_customEnumAnnotations/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/p03_cardsWithPower/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p02_cardRank/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p01_cardSuit/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p06_customEnumAnnotations/CardSuits.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -443,6 +475,30 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p06_customEnumAnnotations/CardRanks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p06_customEnumAnnotations/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p07_deckOfCards/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>

@@ -10,6 +10,7 @@ public class Main {
 
         CardRanks cardRank = CardRanks.valueOf(CardRanks.class, reader.readLine());
         CardSuits cardSuit = CardSuits.valueOf(CardSuits.class, reader.readLine());
+        reader.close();
 
         Card card = new Card(cardSuit, cardRank);
         System.out.println(card);
