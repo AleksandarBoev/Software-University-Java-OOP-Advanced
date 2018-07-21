@@ -18,12 +18,18 @@ public enum Weapon {
     private int baseMaxDamage;
     private int minDamage;
     private int maxDamage;
+    private int strength;
+    private int agility;
+    private int vitality;
     private Gem[] sockets;
 
     Weapon(int baseMinDamage, int baseMaxDamage, int numberOfSockets) {
         this.baseMinDamage = baseMinDamage;
         this.baseMaxDamage = baseMaxDamage;
         this.sockets = new Gem[numberOfSockets];
+        this.strength = 0;
+        this.agility = 0;
+        this.vitality = 0;
     }
 
     public void setName(String name) {
@@ -32,7 +38,13 @@ public enum Weapon {
 
     public void addGem(int socketIndex, Gem gem) {
         try {
+            if (this.sockets[socketIndex] != null) { //if there is already a gem in this socket, get rid of it
+                this.removeGem(socketIndex);
+            }
             this.sockets[socketIndex] = gem;
+            this.strength += gem.getStrength();
+            this.agility += gem.getAgility();
+            this.vitality += gem.getVitality();
         } catch (IndexOutOfBoundsException ioobe) {
 
         }
@@ -40,8 +52,12 @@ public enum Weapon {
 
     public void removeGem(int socketIndex) {
         try {
-            this.sockets[socketIndex] = null;
-        } catch (IndexOutOfBoundsException ioobe) {
+            Gem gem = this.sockets[socketIndex];
+            this.strength -= gem.getStrength(); //if gem is null --> nullpointer exception
+            this.agility -= gem.getAgility();
+            this.vitality -= gem.getVitality();
+            gem = null;
+        } catch (IndexOutOfBoundsException | NullPointerException ioobeNpe) {
 
         }
     }
@@ -52,65 +68,26 @@ public enum Weapon {
 
     @Override
     public String toString() {
-        this.activateSockets();
+        this.updateDamage();
         return String.format("%s: %d-%d Damage, +%d Strength, +%d Agility, +%d Vitality",
                 this.name, this.minDamage, this.maxDamage,
-                this.getAllStrengthBonuses(), this.getAllAgilityBonuses(), this.getAllVitalityBonuses());
+                this.strength, this.agility, this.vitality);
     }
 
-    private void activateSockets() { //updates min and max damage
+    private void updateDamage() {
         int minDamage = this.baseMinDamage;
         int maxDamage = this.baseMaxDamage;
 
-        minDamage += this.getAllStrengthBonuses() * STRENGTH_BONUS_TO_MIN_DAMAGE
-                +this.getAllAgilityBonuses() * AGILITY_BONUS_TO_MIN_DAMAGE
-                +this.getAllVitalityBonuses() * VITALITY_BONUS_TO_MIN_DAMAGE;
+        minDamage += this.strength * STRENGTH_BONUS_TO_MIN_DAMAGE
+                +this.agility * AGILITY_BONUS_TO_MIN_DAMAGE
+                +this.vitality * VITALITY_BONUS_TO_MIN_DAMAGE;
 
-        maxDamage += this.getAllStrengthBonuses() * STRENGTH_BONUS_TO_MAX_DAMAGE
-                +this.getAllAgilityBonuses() * AGILITY_BONUS_TO_MAX_DAMAGE
-                +this.getAllVitalityBonuses() * VITALITY_BONUS_TO_MAX_DAMAGE;
+        maxDamage += this.strength * STRENGTH_BONUS_TO_MAX_DAMAGE
+                +this.agility * AGILITY_BONUS_TO_MAX_DAMAGE
+                +this.vitality * VITALITY_BONUS_TO_MAX_DAMAGE;
 
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
-    }
-
-    private int getAllStrengthBonuses() {
-        int result = 0;
-        for (int socketIndex = 0; socketIndex < this.sockets.length; socketIndex++) {
-            if (this.sockets[socketIndex] == null) {
-                continue;
-            } else {
-                result += this.sockets[socketIndex].getStrength();
-            }
-        }
-
-        return result;
-    }
-
-    private int getAllAgilityBonuses() {
-        int result = 0;
-        for (int socketIndex = 0; socketIndex < this.sockets.length; socketIndex++) {
-            if (this.sockets[socketIndex] == null) {
-                continue;
-            } else {
-                result += this.sockets[socketIndex].getAgility();
-            }
-        }
-
-        return result;
-    }
-
-    private int getAllVitalityBonuses() {
-        int result = 0;
-        for (int socketIndex = 0; socketIndex < this.sockets.length; socketIndex++) {
-            if (this.sockets[socketIndex] == null) {
-                continue;
-            } else {
-                result += this.sockets[socketIndex].getVitality();
-            }
-        }
-
-        return result;
     }
 
 

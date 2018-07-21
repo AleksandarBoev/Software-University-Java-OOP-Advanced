@@ -53,7 +53,6 @@ public class Main {
 
             }
         }
-
         reader.close();
 
 //        for (Weapon weapon : nameWeapon.values()) {
