@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Parameter;
 import java.util.Arrays;
@@ -46,8 +47,8 @@ public class Main {
 
         System.out.println(person);
 
-        Object field = Person.class.getDeclaredField("name").getType();
-        System.out.println(field);
+        Field field = Person.class.getDeclaredField("name");
+        System.out.println(field.getType().getSimpleName());
     }
 
     private static Class returnClass(String className) {
@@ -67,7 +68,8 @@ public class Main {
 
     private static void instructionsToConstructor(Constructor constructor) {
         Class[] parameters = constructor.getParameterTypes();
-        System.out.printf("Please enter these parameters: %s%n", Arrays.asList(Arrays.stream(parameters).map(p -> p.getSimpleName()).toArray(n -> new String[n])));
+        System.out.printf("Please enter these parameters(each on a new line): %s%n",
+                Arrays.asList(Arrays.stream(parameters).map(p -> p.getSimpleName()).toArray(n -> new String[n])));
     }
 
 }

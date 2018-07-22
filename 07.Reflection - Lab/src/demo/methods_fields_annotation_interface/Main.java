@@ -12,9 +12,8 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, ClassNotFoundException, IOException, NoSuchMethodException, InvocationTargetException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String classInfo = "demo.methods_fields_annotation_interface.Student"; //write or use reader.readLine();
+        String classInfo = "demo.methods_fields_annotation_interface.Student"; //write or use reader.readLine(); Or right-click --> copy reference --> paste --> add class name
         Class myStudentClass = Class.forName(classInfo); // how to get the name: write myStudent = Student.class; and then myStudentClass.getName()
-
         Method printAllFieldsMethod = Main.class.getMethod("printAllFields", Class.class);
         String info = printAllFieldsMethod.getAnnotation(Info.class).description();
         System.out.println(info);
@@ -71,6 +70,7 @@ public class Main {
                 for (Field field : currentFields) {
                     field.setAccessible(true);
                     System.out.println(field.getName());
+                    System.out.println(field.get(yourClass));
                     field.setAccessible(false);
                 }
 
