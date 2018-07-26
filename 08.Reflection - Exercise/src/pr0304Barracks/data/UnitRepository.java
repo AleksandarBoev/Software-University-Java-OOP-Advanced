@@ -15,7 +15,7 @@ public class UnitRepository implements Repository {
 		this.amountOfUnits = new TreeMap<>();
 	}
 
-	public void addUnit(Unit unit) {
+	public String addUnit(Unit unit) {
 		String unitType = unit.getClass().getSimpleName();
 		if (!this.amountOfUnits.containsKey(unitType)) {
 			this.amountOfUnits.put(unitType, 0);
@@ -23,6 +23,7 @@ public class UnitRepository implements Repository {
 
 		int newAmount = this.amountOfUnits.get(unitType) + 1;
 		this.amountOfUnits.put(unitType, newAmount);
+		return String.format("%s added!", unitType);
 	}
 
 	public String getStatistics() {
@@ -38,8 +39,18 @@ public class UnitRepository implements Repository {
 		return statBuilder.toString();
 	}
 
-	public void removeUnit(String unitType) throws ExecutionControl.NotImplementedException {
+	public String removeUnit(String unitType) throws ExecutionControl.NotImplementedException {
 		// TODO: implement for problem 4
-		throw new ExecutionControl.NotImplementedException("message");
+		if (!this.amountOfUnits.containsKey(unitType)) {
+			throw new ExecutionControl.NotImplementedException("No such units in repository.");
+		} else {
+			int count = this.amountOfUnits.get(unitType);
+			this.amountOfUnits.put(unitType, --count);
+			if (count == 0) {
+				this.amountOfUnits.remove(unitType);
+			}
+
+			return String.format("%s retired!", unitType);
+		}
 	}
 }
