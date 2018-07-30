@@ -14,7 +14,7 @@ public class UnitFactoryImpl implements UnitFactory {
     public Unit createUnit(String unitType) throws ExecutionControl.NotImplementedException {
         // TODO: implement for problem 3
 
-        switch (unitType.toUpperCase()) { //TODO possible problem
+        switch (unitType.toUpperCase()) {
             case "ARCHER":
                 return new Archer();
 

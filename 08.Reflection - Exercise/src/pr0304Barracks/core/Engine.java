@@ -1,10 +1,9 @@
 package pr0304Barracks.core;
 
 import jdk.jshell.spi.ExecutionControl;
-import pr0304Barracks.contracts.Repository;
+import pr0304Barracks.contracts.*;
 import pr0304Barracks.contracts.Runnable;
-import pr0304Barracks.contracts.Unit;
-import pr0304Barracks.contracts.UnitFactory;
+import pr0304Barracks.core.commands.CommandInterpreterImpl;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,9 +26,9 @@ public class Engine implements Runnable {
 		while (true) {
 			try {
 				String input = reader.readLine();
-				String[] data = input.split("\\s+");
+				String[] data = input.split("\\s+"); //data also contains commandName
 				String commandName = data[0];
-				String result = interpredCommand(data, commandName);
+				String result = interpredCommand(data, commandName); //this method will be refactored
 				if (result.equals("fight")) {
 					break;
 				}
@@ -37,35 +36,43 @@ public class Engine implements Runnable {
 			} catch (RuntimeException e) {
 				System.out.println(e.getMessage());
 			} catch (IOException | ExecutionControl.NotImplementedException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
+				System.out.println(e.getMessage());
 			}
 		}
 	}
 
 	// TODO: refactor for problem 4
 	private String interpredCommand(String[] data, String commandName) throws ExecutionControl.NotImplementedException {
-		String result;
-		switch (commandName) {
-			case "add":
-				result = this.addUnitCommand(data);
-				break;
-			case "report":
-				result = this.reportCommand(data);
-				break;
-			case "fight":
-				result = this.fightCommand(data);
-				break;
-			default:
-				throw new RuntimeException("Invalid command!");
-		}
-		return result;
+//		String result;
+//		switch (commandName) {
+//			case "add":
+//				result = this.addUnitCommand(data);
+//				break;
+//			case "report":
+//				result = this.reportCommand(data);
+//				break;
+//			case "fight":
+//				result = this.fightCommand(data);
+//				break;
+//			default:
+//				throw new RuntimeException("Invalid command!");
+//		}
+//		return result;
+		if ("fight".equals(commandName))
+			return commandName;
+
+		CommandInterpreter commandInterpreter = new CommandInterpreterImpl(this.repository, this.unitFactory, data);
+		return commandInterpreter.interpretCommand().execute();
 	}
 
-	private String reportCommand(String[] data) {
+	@Deprecated //putting the "Deprecated" annotation, because these methods are replaced by the command pattern
+	private String reportCommand(String[] data) { //this data is not used anywhere in the method
 		String output = this.repository.getStatistics();
 		return output;
 	}
 
+	@Deprecated
 	private String addUnitCommand(String[] data) throws ExecutionControl.NotImplementedException {
 		String unitType = data[1];
 		Unit unitToAdd = this.unitFactory.createUnit(unitType);
@@ -73,7 +80,8 @@ public class Engine implements Runnable {
 		String output = unitType + " added!";
 		return output;
 	}
-	
+
+	@Deprecated
 	private String fightCommand(String[] data) {
 		return "fight";
 	}

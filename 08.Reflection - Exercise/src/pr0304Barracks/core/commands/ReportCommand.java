@@ -10,6 +10,6 @@ public class ReportCommand extends Command {
 
     @Override
     public String execute() {
-        return null;
+        return super.getRepository().getStatistics();
     }
 }
