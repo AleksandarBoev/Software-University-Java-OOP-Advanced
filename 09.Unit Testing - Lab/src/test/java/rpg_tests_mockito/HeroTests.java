@@ -3,6 +3,7 @@ package rpg_tests_mockito;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+//import org.mockito.Mockito;
 import org.mockito.Mockito;
 import rpg_lab.contracts.RpgCharacter;
 import rpg_lab.contracts.Target;
