@@ -1,4 +1,4 @@
-package P01_ExtendedArrayList;
+package p01_extendedArrayList;
 
 import java.util.ArrayList;
 import java.util.Iterator;

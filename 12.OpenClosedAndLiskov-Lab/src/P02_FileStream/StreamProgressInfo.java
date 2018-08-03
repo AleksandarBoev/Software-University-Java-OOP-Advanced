@@ -1,10 +1,9 @@
-package P02_FileStream;
+package p02_fileStream;
 
 public class StreamProgressInfo {
-    private BaseStream file;
+    private Streamable file;
 
-    // If we want to stream a music file, we can't
-    public StreamProgressInfo(BaseStream file) {
+    public StreamProgressInfo(Streamable file) {
         this.file = file;
     }
 

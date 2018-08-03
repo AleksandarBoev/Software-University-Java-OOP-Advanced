@@ -1,4 +1,4 @@
-package P02_FileStream;
+package p02_fileStream;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,7 +10,6 @@ public class TestStreamProgressInfo {
 
     @Test
     public void testCalculateCurrentPercentMusic() throws NoSuchFieldException, IllegalAccessException {
-        //(this.file.getBytesSent() * 100) / this.file.getLength()
         this.baseStream = new Music();
         Field length = this.baseStream.getClass().getSuperclass().getDeclaredField("length");
         Field bytesSent = this.baseStream.getClass().getSuperclass().getDeclaredField("bytesSent");
@@ -25,6 +24,7 @@ public class TestStreamProgressInfo {
 
         int expectedResult = 100;
         StreamProgressInfo streamProgressInfo = new StreamProgressInfo(this.baseStream);
+        //formula: (this.file.getBytesSent() * 100) / this.file.getLength()
         int actualResult = streamProgressInfo.calculateCurrentPercent();
 
         Assert.assertEquals(expectedResult, actualResult);

@@ -1,6 +1,6 @@
-package P02_FileStream;
+package p02_fileStream;
 
-public class BaseStream {
+public abstract class BaseStream implements Streamable {
     private int length;
     private int bytesSent;
 

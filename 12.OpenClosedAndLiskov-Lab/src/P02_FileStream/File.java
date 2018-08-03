@@ -1,4 +1,4 @@
-package P02_FileStream;
+package p02_fileStream;
 
 public class File extends BaseStream  {
 

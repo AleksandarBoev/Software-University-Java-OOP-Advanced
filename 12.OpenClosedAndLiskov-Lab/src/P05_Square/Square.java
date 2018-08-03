@@ -1,15 +1,25 @@
-package P05_Square;
+package p05_square;
 
-public class Square extends Rectangle {
-    @Override
-    public void setWidth(int width){
-        super.m_width = width;
-        super.m_height = width;
+public class Square extends BaseQuadratricShape {
+    public Square() {
+    }
+
+    public Square(int side) {
+        super.height = side;
     }
 
     @Override
-    public void setHeight(int height){
-        super.m_width = height;
-        super.m_height = height;
+    public int getHeight() {
+        return super.width;
+    }
+
+    @Override
+    public void setHeight(int side) {
+        super.width = height;
+    }
+
+    @Override
+    public int getArea() {
+        return super.height * super.height;
     }
 }

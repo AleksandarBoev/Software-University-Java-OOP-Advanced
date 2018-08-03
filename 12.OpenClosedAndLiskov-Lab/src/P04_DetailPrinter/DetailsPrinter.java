@@ -1,28 +1,18 @@
-package P04_DetailPrinter;
+package p04_detailPrinter;
+
+import p04_detailPrinter.workers.Printable;
 
 public class DetailsPrinter {
 
-    private Iterable<Employee> employees;
+    private Iterable<Printable> employees;
 
-    public DetailsPrinter(Iterable<Employee> employees) {
+    public DetailsPrinter(Iterable<Printable> employees) {
         this.employees = employees;
     }
 
     public void printDetails() {
-        for (Employee employee : employees) {
-            if (employee instanceof Manager) {
-                this.printManager((Manager) employee);
-            } else {
-                this.printEmployee(employee);
-            }
+        for (Printable employee : employees) {
+            System.out.println(employee.toString());
         }
-    }
-
-    private void printEmployee(Employee employee) {
-        System.out.println(employee);
-    }
-
-    private void printManager(Manager manager) {
-        System.out.println(manager);
     }
 }

@@ -1,26 +1,16 @@
-package P05_Square;
+package p05_square;
 
-class Rectangle {
-    protected int m_width;
-    protected int m_height;
-
-    public void setWidth(int width) {
-        m_width = width;
+class Rectangle extends BaseQuadratricShape{
+    public Rectangle() {
     }
 
-    public void setHeight(int height) {
-        m_height = height;
+    public Rectangle(int height, int width) {
+        super.height = height;
+        super.width = width;
     }
 
-    public int getWidth() {
-        return m_width;
-    }
-
-    public int getHeight() {
-        return m_height;
-    }
-
+    @Override
     public int getArea() {
-        return m_width * m_height;
+        return super.height * super.width;
     }
 }

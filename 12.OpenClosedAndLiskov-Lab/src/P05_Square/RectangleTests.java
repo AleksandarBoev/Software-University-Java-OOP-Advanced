@@ -1,4 +1,4 @@
-package P05_Square;
+package p05_square;
 
 import org.junit.Assert;
 import org.junit.Test;

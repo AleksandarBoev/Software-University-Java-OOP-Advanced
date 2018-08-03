@@ -1,11 +1,7 @@
-package P01_ExtendedArrayList;
+package p01_extendedArrayList;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class ExtendedArrayListTest { //how do I test generic methods?
     private ExtendedArrayList<Integer> integers;
