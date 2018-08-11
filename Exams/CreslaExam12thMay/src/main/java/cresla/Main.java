@@ -6,12 +6,10 @@ import cresla.entities.io.ConsoleWriter;
 import cresla.interfaces.InputReader;
 import cresla.interfaces.Manager;
 import cresla.interfaces.OutputWriter;
-import cresla.interfaces.Reactor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {

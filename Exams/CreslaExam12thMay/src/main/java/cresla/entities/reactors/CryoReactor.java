@@ -1,14 +1,14 @@
 package cresla.entities.reactors;
 
 import cresla.entities.abstractClasses.BaseReactor;
+import cresla.interfaces.Container;
 
 public class CryoReactor extends BaseReactor {
     private int cryoProductionIndex;
 
-    public CryoReactor(int id, int moduleCount, int cryoProductionIndex) {
-        super(id, moduleCount);
+    public CryoReactor(int id, Container moduleContainer, int cryoProductionIndex) {
+        super(id, moduleContainer);
         this.cryoProductionIndex = cryoProductionIndex;
-
     }
 
     @Override

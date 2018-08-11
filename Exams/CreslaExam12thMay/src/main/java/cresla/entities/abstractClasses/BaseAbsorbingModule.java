@@ -20,7 +20,7 @@ public abstract class BaseAbsorbingModule extends BaseModule implements Absorbin
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s Module - %d%n", this.getClass().getSimpleName(), this.getId()));
+        sb.append(super.toString());
         sb.append(String.format("%s: %d", "Heat Absorbing", this.heatAbsorbing));
 
         return sb.toString();

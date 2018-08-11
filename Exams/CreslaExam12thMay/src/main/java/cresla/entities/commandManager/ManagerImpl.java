@@ -1,5 +1,6 @@
 package cresla.entities.commandManager;
 
+import cresla.entities.containers.ModuleContainer;
 import cresla.entities.modules.CooldownSystem;
 import cresla.entities.modules.CryogenRod;
 import cresla.entities.modules.HeatProcessor;
@@ -40,17 +41,18 @@ public class ManagerImpl implements Manager {
         String reactorType = arguments.get(1);
         int additionalParameter = Integer.parseInt(arguments.get(2));
         int moduleCapacity = Integer.parseInt(arguments.get(3));
+        Container moduleContainer = new ModuleContainer(moduleCapacity);
         int reactorId = this.idCounter;
 
         Reactor newReactor = null;
         switch (reactorType) {
             case "Cryo":
-                newReactor = new CryoReactor(reactorId, moduleCapacity, additionalParameter);
+                newReactor = new CryoReactor(reactorId, moduleContainer, additionalParameter);
                 this.incrementCryoReactorsCount();
                 break;
 
             case "Heat":
-                newReactor = new HeatReactor(reactorId, moduleCapacity, additionalParameter);
+                newReactor = new HeatReactor(reactorId, moduleContainer, additionalParameter);
                 this.incrementHeatReactorsCount();
                 break;
         }

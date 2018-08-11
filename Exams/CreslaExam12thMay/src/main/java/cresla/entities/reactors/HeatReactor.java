@@ -1,14 +1,16 @@
 package cresla.entities.reactors;
 
 import cresla.entities.abstractClasses.BaseReactor;
+import cresla.interfaces.Container;
 
 public class HeatReactor extends BaseReactor {
     private int heatReductionIndex;
 
-    public HeatReactor(int id, int moduleCount, int heatReductionIndex) {
-        super(id, moduleCount);
+    public HeatReactor(int id, Container moduleContainer, int heatReductionIndex) {
+        super(id, moduleContainer);
         this.heatReductionIndex = heatReductionIndex;
     }
+
 
     @Override
     public long getTotalEnergyOutput() {

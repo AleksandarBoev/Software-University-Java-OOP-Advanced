@@ -9,14 +9,17 @@ import cresla.interfaces.Reactor;
 import java.lang.reflect.Field;
 import java.util.List;
 
-public abstract class BaseReactor extends BaseIdentifiable implements Reactor {
+public abstract class BaseReactor implements Reactor {
+    private int id;
     private Container moduleContainer;
     //private int moduleCount?
 
-    protected BaseReactor(int id, int moduleCapacity) { //TODO possible additional values
-        super(id);
-        this.moduleContainer = new ModuleContainer(moduleCapacity); //not sure module count should be like this
+    protected BaseReactor(int id, Container moduleContainer) {
+        this.id = id;
+        this.moduleContainer = moduleContainer;
     }
+
+
 
     @Override
     public int getModuleCount() {
@@ -73,5 +76,10 @@ public abstract class BaseReactor extends BaseIdentifiable implements Reactor {
 
     protected Container getModuleContainer() {
         return this.moduleContainer;
+    }
+
+    @Override
+    public int getId() {
+        return this.id;
     }
 }
