@@ -2,53 +2,49 @@ package callofduty.abstractClasses;
 
 import callofduty.interfaces.Mission;
 
-public abstract class BaseMission implements Mission {
-    private String id; //TODO
+public abstract class BaseMission extends BaseModel implements Mission {
     private Double rating;
+
     private Double bounty;
-    private boolean completed;
 
     protected BaseMission(String id, Double rating, Double bounty) {
-        this.id = id;
-        this.rating = rating;
-        this.bounty = bounty;
-        this.completed = false;
+        super(id);
+        this.setRating(rating);
+        this.setBounty(bounty);
     }
 
     @Override
-    public String getId() {
-        return this.id;
-    }
-
-    //{missionType} Mission – {id}
-    //Status: {Open / Completed}
-    //Rating: {rating}
-    //Bounty: {bounty}
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        String missionType = this.getClass().getSimpleName().replace("Mission", "");
-
-        sb.append(String.format("%s Mission - %s", missionType, this.id)).append(System.lineSeparator()); //TODO proveri tiretata!
-
-        String status;
-        if (this.completed)
-            status = "Completed";
-        else
-            status = "Open";
-
-        sb.append(String.format("Status: %s", status)).append(System.lineSeparator());
-        sb.append(String.format("Rating: %.2f", this.rating)).append(System.lineSeparator());
-        sb.append(String.format("Bounty: %.2f", this.bounty));
-
-        return sb.toString();
-    }
-
-    protected double getRatingValue() {
+    public Double getRating() {
         return this.rating;
     }
 
-    protected double getBountyValue() {
+    protected void setRating(Double rating) {
+        this.rating = rating;
+    }
+
+    @Override
+    public Double getBounty() {
         return this.bounty;
     }
+
+    protected void setBounty(Double bounty) {
+        this.bounty = bounty;
+    }
+
+    @Override
+    public String toString() {
+        return
+                this
+                        .getClass()
+                        .getSimpleName()
+                        .replace("Mission", " Mission - ")
+                        + this.getId()
+                        + System.lineSeparator()
+                        + "Status: {missionStatus}"
+                        + System.lineSeparator()
+                        + String.format("Rating: %.2f", this.getRating())
+                        + System.lineSeparator()
+                        + String.format("Bounty: %.2f", this.getBounty());
+    }
 }
+

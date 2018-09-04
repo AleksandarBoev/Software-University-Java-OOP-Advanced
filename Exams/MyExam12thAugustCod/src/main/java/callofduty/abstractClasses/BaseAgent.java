@@ -7,9 +7,8 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseAgent implements Agent { //TODO potencialno id-to i reting-ut da sa v edin abstracten klas?
+public abstract class BaseAgent extends BaseModel implements Agent { //TODO potencialno id-to i reting-ut da sa v edin abstracten klas?
     //The Agents are initialized with an id (String), a name (String) and a rating (Double).
-    private String id;
     private String name;
     private Double rating; //VERIFICATIONS are made in the MissionControlImpl
     private List<Mission> acceptedMissions; //doesn't give less points in judge (for now)
@@ -17,16 +16,11 @@ public abstract class BaseAgent implements Agent { //TODO potencialno id-to i re
     //also have two collections of Assigned missions and Completed missions? Or just integer counters...
 
     protected BaseAgent(String id, String name) {
-        this.id = id;
+        super(id);
         this.name = name;
         this.rating = 0.0;
         this.acceptedMissions = new ArrayList<>();
         this.completedMissions = new ArrayList<>();
-    }
-
-    @Override
-    public String getId() {
-        return this.id;
     }
 
     @Override
@@ -72,7 +66,7 @@ public abstract class BaseAgent implements Agent { //TODO potencialno id-to i re
         //TODO change if class names are wrong
 
         sb.append(String.format("%s Agent - %s", agentType, this.name)).append(System.lineSeparator());
-        sb.append(String.format("Personal Code: %s", this.id)).append(System.lineSeparator());
+        sb.append(String.format("Personal Code: %s", super.getId())).append(System.lineSeparator());
         sb.append(String.format("Assigned Missions: %d", this.acceptedMissions.size())).append(System.lineSeparator());
         sb.append(String.format("Completed Missions: %d", this.completedMissions.size())).append(System.lineSeparator());
         sb.append(String.format("Rating: %.2f", this.rating));
