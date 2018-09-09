@@ -12,13 +12,11 @@ public class SurveillanceMission extends BaseMission {
 
     @Override
     public Double getRating() {
-        return null;
-//        return super.getRatingValue() - super.getRatingValue() * 0.75;
+        return super.getRatingValue() - super.getRatingValue() * 0.75;
     }
 
     @Override
     public Double getBounty() {
-        return null;
-//        return super.getBountyValue() + super.getBountyValue() * 0.5;
+        return super.getBountyValue() + super.getBountyValue() * 0.5;
     }
 }

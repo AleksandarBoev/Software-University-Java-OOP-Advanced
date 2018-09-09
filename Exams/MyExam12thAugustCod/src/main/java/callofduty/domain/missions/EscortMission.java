@@ -12,13 +12,11 @@ public class EscortMission extends BaseMission {
 
     @Override
     public Double getRating() {
-//        return super.getRatingValue() - super.getRatingValue() * 0.25;
-        return null;
+        return super.getRatingValue() - super.getRatingValue() * 0.25;
     }
 
     @Override
     public Double getBounty() {
-//        return super.getBountyValue() + super.getBountyValue() * 0.25;
-        return null;
+        return super.getBountyValue() + super.getBountyValue() * 0.25;
     }
 }

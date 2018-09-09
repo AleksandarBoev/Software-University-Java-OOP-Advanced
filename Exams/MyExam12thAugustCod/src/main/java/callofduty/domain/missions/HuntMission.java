@@ -12,13 +12,11 @@ public class HuntMission extends BaseMission {
 
     @Override
     public Double getRating() {
-//        return super.getRatingValue() + super.getRatingValue() * 0.5;
-        return null;
+        return super.getRatingValue() + super.getRatingValue() * 0.5;
     }
 
     @Override
     public Double getBounty() {
-//        return super.getBountyValue() * 2.0;
-        return null;
+        return super.getBountyValue() * 2.0;
     }
 }
